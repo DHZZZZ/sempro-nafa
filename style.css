@@ -19,7 +19,7 @@ body {
 
 /* ===== FOTO ===== */
 .photo-section {
-    height: 75vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ body {
 
 /* ===== UCAPAN (¼ BAWAH) ===== */
 .message-section {
-    height: 25vh;
+    height: 30vh;
     width: 100%;
     padding: 10px 18px 16px;
 }
