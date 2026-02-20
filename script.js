@@ -14,8 +14,5 @@ setInterval(() => {
 
     photos[index].classList.add('active');
 
-    index++;
-    if (index >= photos.length) {
-        index = 0;
-    }
-}, 3000);
+    index = (index + 1) % photos.length;
+}, 3200);
