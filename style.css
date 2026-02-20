@@ -6,7 +6,6 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(180deg, #0f4c81, #1e6fbf);
-    color: #ffffff;
 }
 
 /* ===== PAGE ===== */
@@ -14,99 +13,91 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* ===== FOTO SECTION ===== */
 .photo-section {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 20px;
     position: relative;
-    height: 45vh;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
 }
 
 .photo {
-    position: absolute;
-    top: -350px;
-    width: 360px;
-    max-width: 92%;
-    border-radius: 22px;
-    opacity: 0;
-    transition: all 1.4s ease;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    width: 100%;
+    height: auto;               /* ⬅️ FOTO FULL, TIDAK TERPOTONG */
+    border-radius: 20px;
+    display: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
 .photo.active {
-    top: 35px;
-    opacity: 1;
-}
-
-.photo.fall {
-    top: 560px;
-    opacity: 0;
-}
-
-/* ===== UCAPAN SECTION ===== */
-.message-section {
-    flex: 1;
-    padding: 45px 8vw 60px;
-    text-align: center;
-}
-
-.message-section h1 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    font-weight: 600;
-}
-
-.message-section p {
-    max-width: 900px;
-    margin: 0 auto 26px;
-    font-size: 18px;
-    line-height: 1.9;
-    opacity: 0.95;
-}
-
-.message-section strong {
     display: block;
-    margin-bottom: 6px;
+    animation: fadeSlide 1.2s ease;
+}
+
+/* ===== UCAPAN ===== */
+.message-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px 60px;
+}
+
+.message-box {
+    background: white;          /* ⬅️ CONTAINER PUTIH */
+    max-width: 700px;
+    width: 100%;
+    padding: 35px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+}
+
+.message-box h1 {
+    font-size: 30px;
+    margin-bottom: 28px;
+    color: #0f4c81;
+}
+
+.message-box p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.from {
     font-weight: 600;
-    opacity: 0.9;
+    margin-bottom: 8px;
+    color: #0f4c81;
+}
+
+/* ===== ANIMASI ===== */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .photo-section {
-        height: 40vh;
-    }
-
-    .photo {
-        width: 300px;
-    }
-
-    .message-section {
-        padding: 35px 6vw 50px;
-    }
-
-    .message-section h1 {
-        font-size: 26px;
-    }
-
-    .message-section p {
-        font-size: 16.5px;
-    }
-}
-
 @media (max-width: 480px) {
-    .photo {
-        width: 260px;
+
+    .photo-section {
+        max-width: 90%;
     }
 
-    .message-section h1 {
+    .message-box h1 {
         font-size: 24px;
     }
 
-    .message-section p {
+    .message-box p {
         font-size: 15.5px;
     }
 }
