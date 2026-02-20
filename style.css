@@ -106,3 +106,36 @@ body {
         font-size: 13.5px;
     }
 }
+/* ===== CONFETTI ===== */
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ===== FLOATING DECOR ===== */
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+}
+
+/* ===== JUDUL GLOW ===== */
+.message-box h1 {
+    animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 6px rgba(15,76,129,0.3);
+    }
+    to {
+        text-shadow: 0 0 14px rgba(30,111,191,0.7);
+    }
+}
