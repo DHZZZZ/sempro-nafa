@@ -5,10 +5,11 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fde2e4, #f9c5d1);
+    background: linear-gradient(180deg, #0f4c81, #1e6fbf);
+    color: #ffffff;
 }
 
-/* ===== PAGE LAYOUT ===== */
+/* ===== PAGE ===== */
 .page {
     min-height: 100vh;
     display: flex;
@@ -26,62 +27,55 @@ body {
 
 .photo {
     position: absolute;
-    top: -300px;
-    width: 340px;              /* FOTO BESAR */
-    max-width: 90%;
-    border-radius: 20px;
+    top: -350px;
+    width: 360px;
+    max-width: 92%;
+    border-radius: 22px;
     opacity: 0;
     transition: all 1.4s ease;
-    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
-    z-index: 1;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
 }
 
 .photo.active {
-    top: 30px;
+    top: 35px;
     opacity: 1;
 }
 
 .photo.fall {
-    top: 500px;
+    top: 560px;
     opacity: 0;
 }
 
 /* ===== UCAPAN SECTION ===== */
 .message-section {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 30px 15px 50px;
-    z-index: 2;
-}
-
-.message-card {
-    background: white;
-    max-width: 600px;
-    width: 100%;
-    padding: 40px 30px;
-    border-radius: 25px;
+    padding: 45px 8vw 60px;
     text-align: center;
-    box-shadow: 0 25px 45px rgba(0,0,0,0.18);
 }
 
-.message-card h1 {
-    font-size: 30px;
-    margin-bottom: 24px;
-    color: #e2558a;
+.message-section h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
-.message-card p {
-    font-size: 17px;
+.message-section p {
+    max-width: 900px;
+    margin: 0 auto 26px;
+    font-size: 18px;
     line-height: 1.9;
-    margin-bottom: 18px;
-    color: #555;
+    opacity: 0.95;
 }
 
-/* ===== RESPONSIVE HP ===== */
-@media (max-width: 768px) {
+.message-section strong {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    opacity: 0.9;
+}
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
     .photo-section {
         height: 40vh;
     }
@@ -90,35 +84,29 @@ body {
         width: 300px;
     }
 
-    .message-card {
-        margin-top: 20px;
-        padding: 30px 22px;
+    .message-section {
+        padding: 35px 6vw 50px;
     }
 
-    .message-card h1 {
+    .message-section h1 {
         font-size: 26px;
     }
 
-    .message-card p {
-        font-size: 16px;
+    .message-section p {
+        font-size: 16.5px;
     }
 }
 
 @media (max-width: 480px) {
-
-    .photo-section {
-        height: 38vh;
-    }
-
     .photo {
         width: 260px;
     }
 
-    .message-card h1 {
+    .message-section h1 {
         font-size: 24px;
     }
 
-    .message-card p {
+    .message-section p {
         font-size: 15.5px;
     }
 }
