@@ -6,12 +6,8 @@ setInterval(() => {
         photo.classList.remove('active', 'fall');
     });
 
-    if (index > 0) {
-        photos[index - 1].classList.add('fall');
-    } else {
-        photos[photos.length - 1].classList.add('fall');
-    }
-
+    const prev = index === 0 ? photos.length - 1 : index - 1;
+    photos[prev].classList.add('fall');
     photos[index].classList.add('active');
 
     index = (index + 1) % photos.length;
