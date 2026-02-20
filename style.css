@@ -7,19 +7,15 @@ body {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #fde2e4, #f9c5d1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
-/* FOTO */
+/* ================= FOTO ================= */
 .photo-container {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 40%;
+    height: 45%;
     display: flex;
     justify-content: center;
     pointer-events: none;
@@ -27,44 +23,52 @@ body {
 
 .photo {
     position: absolute;
-    top: -200px;
-    width: 220px;
-    border-radius: 15px;
+    top: -350px;
+    width: 320px;           /* FOTO DIPERBESAR */
+    height: auto;
+    border-radius: 20px;
     opacity: 0;
-    transition: all 1.2s ease;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transition: all 1.4s ease;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
 }
 
 .photo.active {
-    top: 30px;
+    top: 40px;
     opacity: 1;
 }
 
 .photo.fall {
-    top: 400px;
+    top: 550px;
     opacity: 0;
 }
 
-/* UCAPAN */
+/* ================= UCAPAN ================= */
+.message-wrapper {
+    position: absolute;
+    bottom: 40px;           /* TENGAH BAWAH */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .message-container {
     background: white;
-    padding: 35px 30px;
-    max-width: 520px;
-    border-radius: 20px;
+    padding: 40px 35px;
+    max-width: 600px;
+    border-radius: 25px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    z-index: 10;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.18);
 }
 
 .message-container h1 {
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 30px;        /* HEADER BESAR */
+    margin-bottom: 24px;
     color: #e2558a;
 }
 
 .message-container p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 16px;
+    font-size: 17px;        /* PARAGRAF SAMA SEMUA */
+    line-height: 1.9;
+    margin-bottom: 18px;
     color: #555;
 }
