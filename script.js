@@ -12,18 +12,21 @@ setInterval(() => {
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
 
-const confettiPieces = [];
 const colors = ["#ffffff", "#cfe9ff", "#7bbcff"];
+const confetti = [];
 
 for (let i = 0; i < 120; i++) {
-    confettiPieces.push({
+    confetti.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         r: Math.random() * 4 + 2,
-        d: Math.random() * 1 + 0.5,
+        d: Math.random() * 1.2 + 0.5,
         color: colors[Math.floor(Math.random() * colors.length)]
     });
 }
@@ -31,7 +34,7 @@ for (let i = 0; i < 120; i++) {
 function drawConfetti() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    confettiPieces.forEach(p => {
+    confetti.forEach(p => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
@@ -49,8 +52,4 @@ function drawConfetti() {
 
 drawConfetti();
 
-// ===== RESPONSIVE =====
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
+window.addEventListener("resize", resizeCanvas);
