@@ -33,14 +33,16 @@ body {
 .main {
     flex: 1;
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 50% 50%;
     padding: 32px;
     gap: 32px;
+    align-items: stretch; /* 🔥 penting */
 }
 
 /* ===== FOTO SECTION ===== */
 .photo-section {
     position: relative;
+    height: 100%;              /* 🔥 INI KUNCINYA */
     background: rgba(255,255,255,0.08);
     border-radius: 32px;
     display: flex;
@@ -48,7 +50,6 @@ body {
     justify-content: center;
     overflow: hidden;
 }
-
 /* background lembut */
 .photo-section::before {
     content: "";
