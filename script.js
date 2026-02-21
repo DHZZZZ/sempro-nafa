@@ -1,14 +1,13 @@
-// SLIDESHOW FOTO
-const photos = document.querySelectorAll('.photo');
+const slides = document.querySelectorAll('.slide');
 let index = 0;
 
 setInterval(() => {
-    photos.forEach(p => p.classList.remove('active'));
-    photos[index].classList.add('active');
-    index = (index + 1) % photos.length;
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+    index = (index + 1) % slides.length;
 }, 3500);
 
-// CONFETTI
+/* CONFETTI */
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
 
@@ -21,7 +20,7 @@ resize();
 const colors = ["#ffffff", "#cfe9ff", "#7bbcff"];
 const confetti = [];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 120; i++) {
     confetti.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -46,6 +45,6 @@ function draw() {
     });
     requestAnimationFrame(draw);
 }
-
 draw();
+
 window.addEventListener("resize", resize);
