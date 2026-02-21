@@ -1,4 +1,4 @@
-// ===== SLIDESHOW FOTO =====
+// SLIDESHOW FOTO
 const photos = document.querySelectorAll('.photo');
 let index = 0;
 
@@ -8,48 +8,44 @@ setInterval(() => {
     index = (index + 1) % photos.length;
 }, 3500);
 
-// ===== CONFETTI =====
+// CONFETTI
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
+function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
-resizeCanvas();
+resize();
 
 const colors = ["#ffffff", "#cfe9ff", "#7bbcff"];
 const confetti = [];
 
-for (let i = 0; i < 120; i++) {
+for (let i = 0; i < 100; i++) {
     confetti.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         r: Math.random() * 4 + 2,
-        d: Math.random() * 1.2 + 0.5,
+        d: Math.random() * 1 + 0.5,
         color: colors[Math.floor(Math.random() * colors.length)]
     });
 }
 
-function drawConfetti() {
+function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    confetti.forEach(p => {
+    confetti.forEach(c => {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        ctx.fillStyle = c.color;
         ctx.fill();
-
-        p.y += p.d;
-        if (p.y > canvas.height) {
-            p.y = -10;
-            p.x = Math.random() * canvas.width;
+        c.y += c.d;
+        if (c.y > canvas.height) {
+            c.y = -10;
+            c.x = Math.random() * canvas.width;
         }
     });
-
-    requestAnimationFrame(drawConfetti);
+    requestAnimationFrame(draw);
 }
 
-drawConfetti();
-
-window.addEventListener("resize", resizeCanvas);
+draw();
+window.addEventListener("resize", resize);
